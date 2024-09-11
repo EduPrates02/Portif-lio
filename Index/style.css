@@ -1,0 +1,195 @@
+body {
+    padding: 1px;
+    background-color: #fbfbff;
+  }
+.titulo{
+  position:absolute;
+  top: 0em;
+  left: 45%;
+  text-align: center;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  color: #ffffff;
+}
+/* Formatação do roda-pé */
+#roda-pe {
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: #f4f4ff;
+  font-size: 20px;
+}
+#sem-lucro {
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+} 
+  /* Formatação dos textos e links */
+  .texto-atv {
+    font-family: 'Arial', sans-serif; /* Mantenha a fonte consistente */
+    font-size: 18px; /* Ajuste o tamanho da fonte para facilitar a leitura */
+    color: #333; /* Uma cor escura para uma boa legibilidade */
+    line-height: 1.6; /* Aumenta o espaçamento entre linhas */
+    margin-bottom: 20px; /* Adiciona espaço abaixo do texto */
+    text-align: justify; /* Justifica o texto para uma aparência alinhada */
+    margin: 20px 0; /* Adiciona margem acima e abaixo do texto */
+    padding: 10px; /* Adiciona padding ao redor do texto */
+    border-left: 4px solid rgb(68, 183, 124); /* Adiciona uma borda lateral para um destaque adicional */
+  }
+  .links-atv{
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+  }
+  .links-atv:hover{
+    text-decoration:underline;
+    font-size: 25px;
+    color: rgb(128, 37, 159);
+    transition: 150ms linear;
+  }
+  .links-atv:active{
+    text-decoration: underline;
+    color: rgb(104, 127, 135);
+    font-size: 25px;
+  }
+  
+  /* daqui pra baixo é sobre a barra do topo da pagina */
+  #barra-topo {
+      background-color: rgb(43, 193, 138);
+      display: block;
+      width: 100%;
+      height: 100px;
+      position: fixed; /* Alterado para fixed */
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      text-align: right;
+      justify-content: space-between;
+      transition: height 2s; /* Ajuste a transição para altura */
+      overflow: hidden;
+  }
+  
+  #barra-ext {
+    width: 100%;
+    height: auto;
+  }
+  #logo-img {
+      width: 80px;
+      height: 80px;
+      top: 0;
+      margin: 5px;
+  }
+  #corpo {
+      margin-top: 150px; /* Compensa a altura da .header para não cobrir o conteúdo */
+      padding: 20px;
+  }
+  
+  /* Estilo dos botões como links */
+  #links {
+    display: none; /* Oculta os links inicialmente */
+    flex-direction: row; /* Alinha os links horizontalmente quando a barra é expandida */
+    align-items: center; /* Alinha os links verticalmente no centro */
+    justify-content: flex-start; /* Alinha os links à esquerda */
+    width: 100%;
+    padding: 10px; /* Adiciona algum espaçamento ao redor dos links */
+    gap: 20px; /* Espaçamento entre os botões */
+    box-sizing: border-box; /* Certifica-se de que o padding não aumenta a largura total */
+  }
+  
+  /* Ajustar a altura dos botões para que não fiquem colados na borda */
+  .link-btn {
+    display: block;
+    width: auto;
+    height: 8vh;
+    text-align: center;
+    line-height: 70px; /* Centraliza o texto verticalmente */
+    background-color: #fbfbff; /* Cor de fundo do botão */
+    color: black;
+    text-decoration: none; /* Remove sublinhado dos links */
+    border-radius: 5px; /* Bordas arredondadas */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Transição suave */
+    margin-bottom: 10px; /* Espaçamento inferior */
+    padding: 7px;/*Espaçamento das palavras com o fundo*/
+  }
+  
+  .link-btn:hover {
+    background-color: #ddd;
+    color: #333;
+  }
+  
+  /* Estilo da barra quando expandida */
+  .burger input:checked ~ #links {
+    display: flex; /* Exibe os links quando o botão hamburger é clicado */
+  }
+  
+  
+  /* daqui pra baixo é o css do botão hamburger */
+  
+  .burger {
+      position: absolute;
+      width: 40px;
+      height: 30px;
+      background: transparent;
+      cursor: pointer;
+      display: block;
+      align-items: center;
+      top: 25px;
+      margin: 10px;
+      overflow: hidden;
+    }
+    
+    .burger input {
+      display: none;
+    }
+    
+    .burger span {
+      display: block;
+      position: absolute;
+      height: 4px;
+      width: 100%;
+      background: black;
+      border-radius: 9px;
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: .25s ease-in-out;
+    }
+    
+    .burger span:nth-of-type(1) {
+      top: 0px;
+      transform-origin: left center;
+    }
+    
+    .burger span:nth-of-type(2) {
+      top: 50%;
+      transform: translateY(-50%);
+      transform-origin: left center;
+    }
+    
+    .burger span:nth-of-type(3) {
+      top: 100%;
+      transform-origin: left center;
+      transform: translateY(-100%);
+    }
+    
+    .burger input:checked ~ span:nth-of-type(1) {
+      transform: rotate(45deg);
+      top: 0px;
+      left: 5px;
+    }
+    
+    .burger input:checked ~ span:nth-of-type(2) {
+      width: 0%;
+      opacity: 0;
+    }
+    
+    .burger input:checked ~ span:nth-of-type(3) {
+      transform: rotate(-45deg);
+      top: 28px;
+      left: 5px;
+    }
+    .burger input:checked ~ #links {
+      display: flex; /* Exibe os links quando o botão hamburger é clicado */
+  }
+  
